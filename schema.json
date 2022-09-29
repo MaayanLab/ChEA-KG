@@ -37,15 +37,22 @@
 		},
 		{
 			"node": "Gene",
-			"order": ["pLI", "DESC"],
 			"pathname": "/",
 			"example": ["SLPI", "CAND2"],
+			"search": [
+				"label",
+				"id"
+			],
 			"palette": {
 				"name": "greens",
 				"main": "#aed581",
 				"contrastText": "#000"
 			},
-			"relation": [],
+			"order": ["pLI", "DESC"],
+			"relation": [
+				"ARCHS4 (negatively correlated)", 
+				"ARCHS4 (positively correlated)"
+			],
 			"display": [
 				{
 					"label": "Gene ID",
@@ -89,16 +96,12 @@
 					"type": "link",
 					"href": "https://cfde-gene-pages.cloud/gene/${label}?CF=false&PS=true&Ag=true"
 				}
-			],
-			"search": [
-				"label",
-				"id"
 			]
 		},
 		{
 			"node": "Drug",
 			"order": ["Placenta_Crossing_Weighted_Contribution", "DESC"],
-			"example": ["terconazole", "ketotifen"],
+			"example": ["Terconazole", "Ketotifen"],
 			"pathname": "/",
 			"relation": [],
 			"palette": {
@@ -683,7 +686,13 @@
 				"icon": "${PREFIX}/static/resources/idg.png",
 				"height": 100,
 				"width": 100,
-				"href": "https://druggablegenome.net/"
+				"onClick": {
+					"type": "function",
+					"name": "filter_relation"
+				},
+				"props": {
+					"selected": ["IDG (Drug Target)"]
+				}
 			},
 			{
 				"label": "Kids First",
