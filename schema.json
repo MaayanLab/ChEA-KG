@@ -1,0 +1,227 @@
+{
+    "nodes": [
+        {
+            "node": "Gene",
+            "example": [
+                "COPB2",
+                "SDF2L1"
+            ],
+            "display": [
+                {
+                    "label": "Gene ID",
+                    "text": "${id}",
+                    "type": "text"
+                },
+                {
+                    "label": "label",
+                    "text": "${label}",
+                    "type": "text"
+                },
+                {
+                    "label": "uri",
+                    "text": "${uri}",
+                    "href": "${uri}",
+                    "type": "link"
+                }
+            ],
+            "search": [
+                "id",
+                "label"
+            ]
+        },
+        {
+            "node": "GO Biological Process Term",
+            "example": [
+                "'de novo' posttranslational protein folding (GO:0051084)",
+                "2-oxoglutarate metabolic process (GO:0006103)"
+            ],
+            "display": [
+                {
+                    "label": "GO Biological Process Term ID",
+                    "text": "${id}",
+                    "type": "text"
+                },
+                {
+                    "label": "label",
+                    "text": "${label}",
+                    "type": "text"
+                },
+                {
+                    "label": "ontology_label",
+                    "text": "${ontology_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "uri",
+                    "text": "${uri}",
+                    "href": "${uri}",
+                    "type": "link"
+                }
+            ],
+            "search": [
+                "id",
+                "label"
+            ]
+        },
+        {
+            "node": "KEGG Pathway",
+            "example": [
+                "ABC transporters",
+                "AGE-RAGE signaling pathway in diabetic complications"
+            ],
+            "display": [
+                {
+                    "label": "KEGG Pathway ID",
+                    "text": "${id}",
+                    "type": "text"
+                },
+                {
+                    "label": "label",
+                    "text": "${label}",
+                    "type": "text"
+                },
+                {
+                    "label": "uri",
+                    "text": "${uri}",
+                    "href": "${uri}",
+                    "type": "link"
+                }
+            ],
+            "search": [
+                "id",
+                "label"
+            ]
+        }
+    ],
+    "edges": [
+        {
+            "match": [
+                "KEGG"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "resource",
+                    "text": "${resource}",
+                    "href": "${resource}",
+                    "type": "link"
+                }
+            ]
+        },
+        {
+            "match": [
+                "GO BP"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "resource",
+                    "text": "${resource}",
+                    "href": "${resource}",
+                    "type": "link"
+                }
+            ]
+        }
+    ],
+    "header": {
+        "title": "Enrichr Knowledge Graph",
+        "icon": {
+            "src": "https://minio.dev.maayanlab.cloud/enrichr-kg/enrichr-kg.png",
+            "favicon": "https://minio.dev.maayanlab.cloud/enrichr-kg/enrichr-kg.png",
+            "alt": "Enrichr logo",
+            "key": "enrichr_logo",
+            "width": 100,
+            "height": 60
+        },
+        "tabs": [
+            {
+                "endpoint": "/",
+                "label": "Term & Gene Search",
+                "type": "page",
+                "component": "KnowledgeGraph",
+                "props": {
+                    "init_function": "initialize_kg",
+                    "subheader": {
+                        "onClick": "filter_relation",
+                        "field": "relation"
+                    }
+                }
+            }
+        ]
+    },
+    "footer": [
+        {
+            "type": "github",
+            "code": "https://github.com/MaayanLab/enrichr-kg",
+            "issues": "https://github.com/MaayanLab/enrichr-kg/issues"
+        },
+        {
+            "type": "icon",
+            "key": "lab_icon",
+            "src": "https://minio.dev.maayanlab.cloud/enrichr-kg/maayan-lab.jpg",
+            "alt": "MaayanLab",
+            "href": "https://labs.icahn.mssm.edu/maayanlab/",
+            "height": 125,
+            "width": 150
+        },
+        {
+            "type": "icon",
+            "key": "center_icon",
+            "src": "https://minio.dev.maayanlab.cloud/enrichr-kg/ISMMS_Center_Bioinformatics_RGB_Vrtl.jpg",
+            "alt": "COB",
+            "href": "https://icahn.mssm.edu/research/bioinformatics",
+            "height": 125,
+            "width": 200
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+pandas
+requests
+tqdm
+ipycytoscape
+py2neo
+python-dotenv
+rdflib
+seaborn
+git+https://github.com/Maayanlab/maayanlab-bioinformatics.git

@@ -1,0 +1,28 @@
+version: '2'
+services:
+  neo4j:
+    image: maayanlab/neo4j:mac-arm
+    user: "${UID}:${GID}"
+    environment:
+      NEO4JLABS_PLUGINS: '["apoc", "graph-data-science", "n10s"]'
+      NEO4J_AUTH: ${NEO4J_USER}/${NEO4J_PASSWORD}
+      NEO4J_dbms_memory_heap_max__size: ${NEO4J_dbms_memory_heap_max__size}
+      NEO4J_dbms_memory_heap_initial__size: ${NEO4J_dbms_memory_heap_initial__size}
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - ./data/neo4j:/data
+    networks:
+      internal:
+        aliases:
+          - neo4j
+  kg:
+    build: .
+    image: maayanlab/knowledge_graph:1.1.23
+    env_file: .env
+    ports:
+      - 3000:3000
+# Internal docker networks
+networks:
+  internal:
