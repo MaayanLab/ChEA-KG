@@ -3,6 +3,5 @@ venv
 Mammalia
 gmt
 .env
-csv
 data
 .ipynb_checkpoints
