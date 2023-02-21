@@ -3,6 +3,7 @@
 ## Running Neo4j on docker
 
 ```
+cp .env.example .env
 docker-compose up kg
 ```
 
