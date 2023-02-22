@@ -24,6 +24,7 @@
                     "type": "link"
                 }
             ],
+            "relation": [],
             "search": [
                 "id",
                 "label"
@@ -58,6 +59,7 @@
                     "type": "link"
                 }
             ],
+            "relation": [],
             "search": [
                 "id",
                 "label"
@@ -87,6 +89,7 @@
                     "type": "link"
                 }
             ],
+            "relation": [],
             "search": [
                 "id",
                 "label"
