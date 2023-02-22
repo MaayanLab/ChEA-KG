@@ -190,11 +190,7 @@
                 "type": "page",
                 "component": "KnowledgeGraph",
                 "props": {
-                    "init_function": "initialize_kg",
-                    "subheader": {
-                        "onClick": "filter_relation",
-                        "field": "relation"
-                    }
+                    "init_function": "initialize_kg"
                 }
             }
         ]
