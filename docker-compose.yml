@@ -19,7 +19,7 @@ services:
           - neo4j
   kg:
     build: .
-    image: maayanlab/knowledge_graph:1.1.23
+    image: maayanlab/knowledge_graph:1.1.32
     env_file: .env
     ports:
       - 3000:3000
