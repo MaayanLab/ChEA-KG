@@ -5,3 +5,4 @@ gmt
 .env
 data
 .ipynb_checkpoints
+csv/
