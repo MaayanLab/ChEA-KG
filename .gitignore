@@ -6,3 +6,4 @@ gmt
 data
 .ipynb_checkpoints
 csv/
+*.dump
