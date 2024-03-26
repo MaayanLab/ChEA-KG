@@ -19,10 +19,10 @@ services:
           - neo4j
   kg:
     build: .
-    image: maayanlab/knowledge_graph:1.1.57
+    image: maayanlab/knowledge_graph:latest
     env_file: .env
     ports:
-      - 3000:3000
+      - 3001:3000
 # Internal docker networks
 networks:
   internal:
