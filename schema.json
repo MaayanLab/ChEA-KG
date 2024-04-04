@@ -4,7 +4,7 @@
             "node": "Gene",
             "example": [
                 "COPB2",
-                "SDF2L1"
+                "STAT3"
             ],
             "display": [
                 {
@@ -46,17 +46,6 @@
                     "label": "label",
                     "text": "${label}",
                     "type": "text"
-                },
-                {
-                    "label": "ontology_label",
-                    "text": "${ontology_label}",
-                    "type": "text"
-                },
-                {
-                    "label": "uri",
-                    "text": "${uri}",
-                    "href": "${uri}",
-                    "type": "link"
                 }
             ],
             "relation": [],
@@ -66,14 +55,14 @@
             ]
         },
         {
-            "node": "KEGG Pathway",
+            "node": "Mouse Phenotype",
             "example": [
-                "ABC transporters",
-                "AGE-RAGE signaling pathway in diabetic complications"
+                "abdominal situs ambiguus MP:0011250",
+                "abdominal situs inversus MP:0011249"
             ],
             "display": [
                 {
-                    "label": "KEGG Pathway ID",
+                    "label": "Mouse Phenotype ID",
                     "text": "${id}",
                     "type": "text"
                 },
@@ -81,12 +70,30 @@
                     "label": "label",
                     "text": "${label}",
                     "type": "text"
+                }
+            ],
+            "relation": [],
+            "search": [
+                "id",
+                "label"
+            ]
+        },
+        {
+            "node": "Drug",
+            "example": [
+                "afatinib",
+                "erlotinib"
+            ],
+            "display": [
+                {
+                    "label": "Drug ID",
+                    "text": "${id}",
+                    "type": "text"
                 },
                 {
-                    "label": "uri",
-                    "text": "${uri}",
-                    "href": "${uri}",
-                    "type": "link"
+                    "label": "label",
+                    "text": "${label}",
+                    "type": "text"
                 }
             ],
             "relation": [],
@@ -99,7 +106,7 @@
     "edges": [
         {
             "match": [
-                "KEGG"
+                "LINCS Up Regulated"
             ],
             "selected": true,
             "display": [
@@ -129,10 +136,47 @@
                     "type": "text"
                 },
                 {
-                    "label": "resource",
-                    "text": "${resource}",
-                    "href": "${resource}",
-                    "type": "link"
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "match": [
+                "LINCS Down Regulated"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "score",
+                    "text": "${score}",
+                    "type": "text"
                 }
             ]
         },
@@ -174,15 +218,60 @@
                     "type": "link"
                 }
             ]
+        },
+        {
+            "match": [
+                "MP"
+            ],
+            "selected": true,
+            "display": [
+                {
+                    "label": "source",
+                    "text": "${source}",
+                    "type": "text"
+                },
+                {
+                    "label": "relation",
+                    "text": "${relation}",
+                    "type": "text"
+                },
+                {
+                    "label": "target",
+                    "text": "${target}",
+                    "type": "text"
+                },
+                {
+                    "label": "source label",
+                    "text": "${source_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "target label",
+                    "text": "${target_label}",
+                    "type": "text"
+                },
+                {
+                    "label": "resource",
+                    "text": "${resource}",
+                    "href": "${resource}",
+                    "type": "link"
+                }
+            ]
         }
     ],
     "header": {
-        "title": "Enrichr Knowledge Graph",
+        "header": "Enrichr-KG",
+        "title": "Enrichr-KG",
+        "background": {
+            "backgroundColor": "#000",
+            "contrastText": "#FFF"
+        },
         "icon": {
             "src": "https://minio.dev.maayanlab.cloud/enrichr-kg/enrichr-kg.png",
             "favicon": "https://minio.dev.maayanlab.cloud/enrichr-kg/enrichr-kg.png",
-            "alt": "Enrichr logo",
-            "key": "enrichr_logo",
+            "faviconTitle": "Enrichr-KG",
+            "alt": "Enrichr-KG",
+            "key": "Enrichr-KG_logo",
             "width": 100,
             "height": 60
         },
@@ -193,7 +282,16 @@
                 "type": "page",
                 "component": "KnowledgeGraph",
                 "props": {
-                    "init_function": "initialize_kg"
+                    "init_function": "initialize_kg",
+                    "initial_query": {
+                        "start": "Gene",
+                        "start_term": "APOE",
+                        "start_field": "label"
+                    },
+                    "subheader": {
+                        "url_field": "filter",
+                        "query_field": "relation"
+                    }
                 }
             }
         ]
