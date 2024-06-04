@@ -4,7 +4,7 @@
 
 ```
 cp .env.example .env
-docker-compose up kg
+docker-compose up neo4j
 ```
 
 open http://localhost:7474
