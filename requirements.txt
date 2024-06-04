@@ -7,3 +7,4 @@ python-dotenv
 rdflib
 seaborn
 git+https://github.com/Maayanlab/maayanlab-bioinformatics.git
+neo4j
