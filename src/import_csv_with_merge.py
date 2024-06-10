@@ -81,9 +81,9 @@ def ingest_edges(relation, meta, source, target, edges, limit=10000):
 				try:
 					query = '''
 						UNWIND $batch as row
-						MERGE (n:%s), (m:%s)
+						MATCH (n:%s), (m:%s)
 						WHERE n.id=row.source and m.id=row.target
-						CREATE (n)-[r:%s {
+						MERGE (n)-[r:%s {
 							%s
 						}]->(m)
 
