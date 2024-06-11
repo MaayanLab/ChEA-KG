@@ -52,8 +52,8 @@ def ingest_node(node_type, nodes, limit=10000):
 				try:
 					query = '''
 						UNWIND $batch as map
-						MERGE (n:%s)
-						SET n = map
+						MERGE (n:%s {id: map.id})
+						SET n += map
 					'''%(node_type)
 					tx.run(query, {"batch": batch})
 					skip += limit
