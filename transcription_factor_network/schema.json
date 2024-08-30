@@ -70,9 +70,9 @@
                 "props": {
                     "init_function": "initialize_kg",
                     "initial_query": {
-                        "start": "Transcription factor",
+                        "start": "Transcription_Factor",
                         "start_term": "SPDEF",
-                        "start_field": "label"
+                        "start_field": "source"
                     },
                     "subheader": {
                         "url_field": "filter",
