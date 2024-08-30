@@ -105,8 +105,8 @@ def ingest_edges(relation, meta, source, target, edges, limit=10000):
 
 directories = sys.argv[1:]
 
-node_pattern = "(?P<directory>.+)/(?P<label>.+)\.(?P<entity>.+)\.csv"
-edge_pattern = "(?P<directory>.+)/(?P<source_type>.+)\.(?P<relation>.+)\.(?P<target_type>.+)\.(?P<entity>.+)\.csv"
+node_pattern = r"(?P<directory>.+)/(?P<label>.+)\.(?P<entity>.+)\.csv"
+edge_pattern = r"(?P<directory>.+)/(?P<source_type>.+)\.(?P<relation>.+)\.(?P<target_type>.+)\.(?P<entity>.+)\.csv"
 for directory in directories:
     directory = directory.strip()
     for filename in glob(directory + "/*.nodes.csv"):
