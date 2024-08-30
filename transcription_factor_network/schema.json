@@ -72,7 +72,7 @@
                     "initial_query": {
                         "start": "Transcription_Factor",
                         "start_term": "SPDEF",
-                        "start_field": "source"
+                        "start_field": "label"
                     },
                     "subheader": {
                         "url_field": "filter",
