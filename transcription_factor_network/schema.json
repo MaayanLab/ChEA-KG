@@ -1,7 +1,7 @@
 {
     "nodes": [
         {
-            "node": "Transcription_factor",
+            "node": "Transcription_Factor",
             "example": [
                 "ZNF215",
                 "ETV7"
@@ -23,7 +23,7 @@
     "edges": [
         {
             "match": [
-                "Transcription Factor"
+                "Direction"
             ],
             "selected": true,
             "display": [
@@ -71,7 +71,7 @@
                     "init_function": "initialize_kg",
                     "initial_query": {
                         "start": "Transcription_Factor",
-                        "start_term": "SPDEF",
+                        "start_term": "MYSM1",
                         "start_field": "label"
                     },
                     "subheader": {
