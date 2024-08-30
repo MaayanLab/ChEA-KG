@@ -8,14 +8,13 @@
             ],
             "display": [
                 {
-                    "label": "transcription_factor",
-                    "text": "${transcription_factor}",
+                    "label": "label",
+                    "text": "${label}",
                     "type": "text"
                 }
             ],
             "relation": [],
             "search": [
-                "id",
                 "label"
             ]
         }
@@ -33,8 +32,8 @@
                     "type": "text"
                 },
                 {
-                    "label": "direction",
-                    "text": "${direction}",
+                    "label": "relation",
+                    "text": "${relation}",
                     "type": "text"
                 },
                 {
