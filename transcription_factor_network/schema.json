@@ -3,9 +3,7 @@
         {
             "node": "target_tf",
             "example": [
-                "ZNF750id",
                 "ZNF750",
-                "NFE2id",
                 "NFE2"
             ],
             "display": [
@@ -28,9 +26,7 @@
         {
             "node": "source_tf",
             "example": [
-                "ZNF750id",
                 "ZNF750",
-                "LYL1id",
                 "LYL1"
             ],
             "display": [
@@ -54,7 +50,7 @@
     "edges": [
         {
             "match": [
-                "upregulated"
+                "downregulated"
             ],
             "selected": true,
             "display": [
@@ -77,7 +73,7 @@
         },
         {
             "match": [
-                "downregulated"
+                "upregulated"
             ],
             "selected": true,
             "display": [
