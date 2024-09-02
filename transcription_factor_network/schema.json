@@ -15,6 +15,7 @@
             ],
             "relation": [],
             "search": [
+                "id",
                 "label"
             ]
         }
