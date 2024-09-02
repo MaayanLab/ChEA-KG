@@ -1,12 +1,19 @@
 {
     "nodes": [
         {
-            "node": "Transcription_Factor",
+            "node": "target_tf",
             "example": [
-                "ZNF215",
-                "ETV7"
+                "ZNF750id",
+                "ZNF750",
+                "NFE2id",
+                "NFE2"
             ],
             "display": [
+                {
+                    "label": "target_tf ID",
+                    "text": "${id}",
+                    "type": "text"
+                },
                 {
                     "label": "label",
                     "text": "${label}",
@@ -15,7 +22,31 @@
             ],
             "relation": [],
             "search": [
-                "id",
+                "label"
+            ]
+        },
+        {
+            "node": "source_tf",
+            "example": [
+                "ZNF750id",
+                "ZNF750",
+                "LYL1id",
+                "LYL1"
+            ],
+            "display": [
+                {
+                    "label": "source_tf ID",
+                    "text": "${id}",
+                    "type": "text"
+                },
+                {
+                    "label": "label",
+                    "text": "${label}",
+                    "type": "text"
+                }
+            ],
+            "relation": [],
+            "search": [
                 "label"
             ]
         }
