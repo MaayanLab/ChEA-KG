@@ -1,37 +1,14 @@
 {
     "nodes": [
         {
-            "node": "target_tf",
+            "node": "tf",
             "example": [
-                "ZNF750",
-                "NFE2"
+                "ZNF215",
+                "ETV7"
             ],
             "display": [
                 {
-                    "label": "target_tf ID",
-                    "text": "${id}",
-                    "type": "text"
-                },
-                {
-                    "label": "label",
-                    "text": "${label}",
-                    "type": "text"
-                }
-            ],
-            "relation": [],
-            "search": [
-                "label"
-            ]
-        },
-        {
-            "node": "source_tf",
-            "example": [
-                "ZNF750",
-                "LYL1"
-            ],
-            "display": [
-                {
-                    "label": "source_tf ID",
+                    "label": "tf ID",
                     "text": "${id}",
                     "type": "text"
                 },
@@ -50,7 +27,7 @@
     "edges": [
         {
             "match": [
-                "downregulated"
+                "upregulated"
             ],
             "selected": true,
             "display": [
@@ -73,7 +50,7 @@
         },
         {
             "match": [
-                "upregulated"
+                "downregulated"
             ],
             "selected": true,
             "display": [
@@ -120,8 +97,8 @@
                 "props": {
                     "init_function": "initialize_kg",
                     "initial_query": {
-                        "start": "Transcription_Factor",
-                        "start_term": "MYSM1",
+                        "start": "tf",
+                        "start_term": "LYL1",
                         "start_field": "label"
                     },
                     "subheader": {
