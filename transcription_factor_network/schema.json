@@ -1,15 +1,15 @@
 {
     "nodes": [
         {
-            "node": "target_tf",
+            "node": "target tf",
             "example": [
-                "ZNF750",
-                "NFE2"
+                "NFE2-tl",
+                "ZNF750-tl"
             ],
             "display": [
                 {
-                    "label": "target_tf ID",
-                    "text": "${id}",
+                    "label": "target tf ID",
+                    "text": "${id'}",
                     "type": "text"
                 },
                 {
@@ -20,19 +20,20 @@
             ],
             "relation": [],
             "search": [
+                "id",
                 "label"
             ]
         },
         {
-            "node": "source_tf",
+            "node": "source tf",
             "example": [
-                "ZNF750",
-                "LYL1"
+                "LYL1",
+                "TET2"
             ],
             "display": [
                 {
-                    "label": "source_tf ID",
-                    "text": "${id}",
+                    "label": "source tf ID",
+                    "text": "${id'}",
                     "type": "text"
                 },
                 {
@@ -43,6 +44,7 @@
             ],
             "relation": [],
             "search": [
+                "id",
                 "label"
             ]
         }
@@ -120,8 +122,8 @@
                 "props": {
                     "init_function": "initialize_kg",
                     "initial_query": {
-                        "start": "Transcription_Factor",
-                        "start_term": "MYSM1",
+                        "start": "source_tf",
+                        "start_term": "STAT4",
                         "start_field": "label"
                     },
                     "subheader": {
