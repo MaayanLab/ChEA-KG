@@ -7,3 +7,4 @@ data
 .ipynb_checkpoints
 csv/
 *.dump
+kg_assertions_for_neo4j/
