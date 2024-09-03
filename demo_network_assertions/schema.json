@@ -1,14 +1,14 @@
 {
     "nodes": [
         {
-            "node": "tf",
+            "node": "Transcription Factor",
             "example": [
                 "ZNF215",
                 "ETV7"
             ],
             "display": [
                 {
-                    "label": "tf ID",
+                    "label": "Transcription Factor ID",
                     "text": "${id}",
                     "type": "text"
                 },
@@ -20,6 +20,7 @@
             ],
             "relation": [],
             "search": [
+                "id",
                 "label"
             ]
         }
@@ -27,8 +28,12 @@
     "edges": [
         {
             "match": [
-                "upregulated"
+                "upregulates"
             ],
+            "palette": {
+				"main": "#0ac749"
+			},
+            "directed": "triangle",
             "selected": true,
             "display": [
                 {
@@ -50,8 +55,12 @@
         },
         {
             "match": [
-                "downregulated"
+                "downregulates"
             ],
+            "palette": {
+				"main": "#c70a2d"
+			},
+            "directed": "triangle",
             "selected": true,
             "display": [
                 {
@@ -73,8 +82,8 @@
         }
     ],
     "header": {
-        "header": "TranscriptionFactor-KG",
-        "title": "TranscriptionFactor-KG",
+        "header": "Demo-KG",
+        "title": "Demo-KG",
         "background": {
             "backgroundColor": "#000",
             "contrastText": "#FFF"
@@ -82,22 +91,22 @@
         "icon": {
             "src": "https://minio.dev.maayanlab.cloud/enrichr-kg/enrichr-kg.png",
             "favicon": "https://minio.dev.maayanlab.cloud/enrichr-kg/enrichr-kg.png",
-            "faviconTitle": "TranscriptionFactor-KG",
-            "alt": "TranscriptionFactor-KG",
-            "key": "TranscriptionFactor-KG_logo",
+            "faviconTitle": "Demo-KG",
+            "alt": "Demo-KG",
+            "key": "Demo-KG_logo",
             "width": 100,
             "height": 60
         },
         "tabs": [
             {
                 "endpoint": "/",
-                "label": "Transcription Factor Search",
+                "label": "Term & Gene Search",
                 "type": "page",
                 "component": "KnowledgeGraph",
                 "props": {
                     "init_function": "initialize_kg",
                     "initial_query": {
-                        "start": "tf",
+                        "start": "Transcription Factor",
                         "start_term": "LYL1",
                         "start_field": "label"
                     },
