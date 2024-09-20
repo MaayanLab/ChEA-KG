@@ -3,8 +3,13 @@
 Mammalia
 gmt
 .env
-data
+data/
 .ipynb_checkpoints
 csv/
 *.dump
+raw_data/
 kg_assertions_for_neo4j/
+cytoscape/
+network_stats/
+figures/
+benchmarking_results/
