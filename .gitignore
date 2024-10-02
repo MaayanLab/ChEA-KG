@@ -7,9 +7,11 @@ data/
 .ipynb_checkpoints
 csv/
 *.dump
+
 raw_data/
 kg_assertions_for_neo4j/
-cytoscape/
-network_stats/
-figures/
 benchmarking_results/
+Gene-Knowledge-Graph/
+edge_constructing_files/
+filtered_edge_list/
+package-lock.json
