@@ -9,7 +9,7 @@ from neo4j import GraphDatabase
 from dotenv import load_dotenv
 import numpy as np
 
-load_dotenv('../Gene-Knowledge-Graph/.env')
+load_dotenv('../.env')
 
 
 def df_parser_node(df):
