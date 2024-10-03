@@ -8,7 +8,10 @@ data/
 csv/
 *.dump
 
+figures/
+cytoscape_ITCR_poster/
 raw_data/
+summary_figures/
 kg_assertions_for_neo4j/
 benchmarking_results/
 Gene-Knowledge-Graph/
