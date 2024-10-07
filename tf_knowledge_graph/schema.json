@@ -20,7 +20,6 @@
             ],
             "relation": [],
             "search": [
-                "id",
                 "label"
             ]
         }
@@ -78,8 +77,8 @@
         }
     ],
     "header": {
-        "header": "ChEA3-RummaGEO-KG",
-        "title": "ChEA3-RummaGEO-KG",
+        "header": "Demo Gene Regulatory Network",
+        "title": "Demo Gene Regulatory Network",
         "background": {
             "backgroundColor": "#000",
             "contrastText": "#FFF"
