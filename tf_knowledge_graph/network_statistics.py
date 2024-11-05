@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -52,13 +53,15 @@ def plot_connectivity_distrib(edge_list_file, output, fig_size = (6,5)):
         edge_list_file: a file with a list of edges, must have column named 'source' and 'target'
         output: the directory where to save the images 
     """
-
+    img_out = f'{output}/img'
+    if not os.path.exists(img_out):
+        os.mkdir(img_out)
     network = pd.read_csv(edge_list_file, usecols=['source', 'target'])
 
     # Get the frequency of each node as either a source or a target in an edge
     out_counts = network['source'].value_counts()
     in_counts = network['target'].value_counts()
-    out_bins = max(out_counts)//50
+    out_bins = 50
 
     # OUTDEGREE
     plt.figure(figsize=fig_size, dpi=300)
@@ -67,7 +70,7 @@ def plot_connectivity_distrib(edge_list_file, output, fig_size = (6,5)):
     plt.yscale('log')
     
     plt.ylabel('Relative frequency', fontsize=14)
-    plt.xlabel('Node out-degree', fontsize=14)
+    plt.xlabel('Out-degree', fontsize=14)
 
     plt.tight_layout()
     plt.savefig(f"{output}/img/out_degree_unfiltered.png")
@@ -80,11 +83,10 @@ def plot_connectivity_distrib(edge_list_file, output, fig_size = (6,5)):
     plt.yscale('log')
     
     plt.ylabel('Relative frequency', fontsize=14)
-    plt.xlabel('Node in-degree', fontsize=14)
-    plt.xlabel('Node out-degree', fontsize=14)
+    plt.xlabel('In-degree', fontsize=14)
 
     plt.tight_layout()
-    plt.savefig(f"{output}/img/in_degree_unfiltered.png")
+    plt.savefig(f"{img_out}/in_degree_unfiltered.png")
     plt.show()
     
 
