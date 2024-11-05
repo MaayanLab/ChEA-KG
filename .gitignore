@@ -8,8 +8,8 @@ data/
 csv/
 *.dump
 
-figures/
-cytoscape_ITCR_poster/
+./tf_knowledge_graph
+
 raw_data/
 summary_figures/
 kg_assertions_for_neo4j/
@@ -18,3 +18,10 @@ Gene-Knowledge-Graph/
 edge_constructing_files/
 filtered_edge_list/
 package-lock.json
+benchmarking_figures.ipynb
+
+# test folders
+filtered_edge_list_large_network/
+benchmarking_results_large_networks/
+figures/
+cytoscape_ITCR_poster/
