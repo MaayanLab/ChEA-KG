@@ -21,6 +21,7 @@ package-lock.json
 benchmarking_figures.ipynb
 
 # test folders
+kg_assertions_for_neo4j_large/
 filtered_edge_list_large_network/
 benchmarking_results_large_networks/
 figures/

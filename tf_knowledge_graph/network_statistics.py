@@ -101,18 +101,28 @@ def n_self_loops(all_edges):
     return all_edges['self_loop'].sum()
 
 
-def n_feedback_loops(edge_type):
+def two_node_loops(edge_lib, opposite_lib = None):
 
     """
     return the number of feedback loops
     edge_type: specifies positive edges or negative edges
     """
 
-    reversed = edge_type.rename(columns={'source': 'target', 'target': 'source'})
-    merged = pd.merge(edge_type, reversed, on=['source', 'relation', 'target'])
-    merged = merged[merged['source'] != merged['target']]
-    merged['pair'] = merged.apply(lambda row: tuple(sorted((row['source'], row['target']))), axis=1)
-    return merged['pair'].drop_duplicates().shape[0]
+    if opposite_lib is not None:
+        reversed = opposite_lib.rename(columns={'source':'target','target':'source'})
+        merged = edge_lib.merge(reversed, on=['source', 'target'])
+        final = merged[merged['source'] != merged['target']]
+        merged['pair'] = merged.apply(lambda row: tuple(sorted((row['source'], row['target']))), axis=1)
+
+    else: 
+        reversed = edge_lib.rename(columns={'source': 'target', 'target': 'source'})
+        merged = edge_lib.merge(reversed, on=['source', 'relation', 'target'])
+        merged = merged[merged['source'] != merged['target']]
+        merged['pair'] = merged.apply(lambda row: tuple(sorted((row['source'], row['target']))), axis=1)
+        final = merged['pair'].drop_duplicates()
+
+    return final.shape[0]
+
 
 
 def all_network_stats(edge_list_file, save = False, output = None):
@@ -138,8 +148,8 @@ def all_network_stats(edge_list_file, save = False, output = None):
         'Avg in links per node':avg_node_degree(all_edges, 'source'),
         'Avg total links per node':all_edges.shape[0] / network['all nodes'].shape[0],
         'Number of self loops':n_self_loops(all_edges),
-        'Number of upregulation feedback loops':n_feedback_loops(network['up edges']),
-        'Number of downregulation feedback loops':n_feedback_loops(network['dn edges'])
+        'Number of positive feedback loops':two_node_loops(network['up edges']) + two_node_loops(network['dn edges']),
+        'Number of negative feedback loops':two_node_loops(network['dn edges'], network['up edges'])
     }
 
     df = pd.DataFrame([stats])
