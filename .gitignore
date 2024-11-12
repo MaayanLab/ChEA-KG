@@ -8,8 +8,6 @@ data/
 csv/
 *.dump
 
-./tf_knowledge_graph
-
 raw_data/
 summary_figures/
 kg_assertions_for_neo4j/
@@ -19,6 +17,7 @@ edge_constructing_files/
 filtered_edge_list/
 package-lock.json
 benchmarking_figures.ipynb
+public/schema.json
 
 # test folders
 kg_assertions_for_neo4j_large/
@@ -26,3 +25,6 @@ filtered_edge_list_large_network/
 benchmarking_results_large_networks/
 figures/
 cytoscape_ITCR_poster/
+Dockerfile_dontuse
+kg_assertions_for_neo4j_all_networks/
+about.md
