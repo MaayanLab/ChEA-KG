@@ -15,12 +15,12 @@
 
 <br/><br/>
 ## **The ChEA-KG GRN** <a name="introduction"></a>
-***Nodes***
-Nodes in the ChEA-KG are human transcription factors cataloged by [ChEA3](https://maayanlab.cloud/chea3/). Each node is associated with an **id, label**, and **URI** that points to the NCBI gene page for that gene.
-***Edges***
+***Nodes***  
+Nodes in the ChEA-KG are human transcription factors cataloged by [ChEA3](https://maayanlab.cloud/chea3/). Each node is associated with an **id, label**, and **URI** that points to the NCBI gene page for that gene.  
+***Edges***  
 Edges in the GRN indicate regulatory relationships between source and target TFs, inferred from enrichment analysis.  There are two edge types: 
-    1. <span style="color: red; font-weight: bold;">Red</span> plungers indicate downregulation
-    2. <span style="color: green; font-weight: bold;">Green</span> arrows inidcate upregulation
+    1. <span style="font-weight: bold; color: red;">Red</span> plungers indicate downregulation
+    2. <span style="font-weight: bold; color: green;">Green</span> arrows inidcate upregulation
 <p>&nbsp;</p>
 
 ### **Searching the ChEA-KG GRN** <a name="grn-search"></a>
@@ -39,7 +39,7 @@ The two-term search generates a shortest path between two transcription factor n
 The toolbar above the network view provides several buttons to further interact with the network. From left to right, these are Size, Full-screen, Network view, Table view, Save subnetwork, Download graph as an image file, Show tooltip, Switch graph layout, Show edge labels, and Show legend.  
 
 To move a node in the network view, click and drag. 
-
+ 
 #### *Adjust the network view:* <a name="adjust-view"></a>
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adjust subnetwork size: Adjust the size slider to limit the number of relationships displayed for that network
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Full-screen: Click the full-screen button to view the network search page in full-screen
@@ -48,14 +48,15 @@ To move a node in the network view, click and drag.
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Network and table view: Toggle between network and table view by clicking on their respective buttons
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Switch graph layout: Switch between force-directed, geometric, or hierarchical graph layouts. 
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Show edge labels: Display the edge labels ("upregulates", "downregulates") over the edges
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Show legend: Show the legend. An additional toolbar button is displayed that adjusts the size of the legend when clicked. 
-
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Show legend: Show the legend. An additional toolbar button is displayed that adjusts the size of the legend when clicked.  
+ 
 #### *Download the subnetwork:*  <a name="download"></a>
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Save subnetwork: Save the subnetwork to a file. This produces two files: 
     - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodes.csv has the fields [id, label, kind, uri, color]
     - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edges.csv has the  fields [source, target, relation, source_label, target_label, kind, p_value, z_score]
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Download graph as an image file: Save a PNG, JPG, or SVG image of the network view
 <p>&nbsp;</p>
+
 ## **Enrichment analysis with ChEA-KG** <a name="chea-enrichment"></a>
 The enrichment analysis page provides an option to visualize a subnetwork of the GRN based on ChEA3 enrichment analysis results. 
 
