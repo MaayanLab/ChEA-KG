@@ -24,8 +24,8 @@ Nodes in the ChEA-KG are human transcription factors cataloged by [ChEA3](https:
 ***Edges*** 
 
 Edges in the GRN indicate regulatory relationships between source and target TFs, inferred from enrichment analysis. There are two edge types: 
-    1 - <span style="color: red;">Red</span> plungers indicate downregulation
-    2 - <span style="color: green;">Green</span> arrows indicate upregulation
+    1 - <span style="color: red;">Red</span> plungers indicate downregulation\
+    2 - <span style="color: green;">Green</span> arrows indicate upregulation\
 
 <p>&nbsp;</p>
 
@@ -58,10 +58,10 @@ To move a node in the network view, click and drag.
  
 
 #### *Download the subnetwork:*  <a name="download"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Save subnetwork: Save the subnetwork to a file. This produces two files: 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 -&nbsp; nodes.csv has the fields [id, label, kind, uri, color]
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 -&nbsp; edges.csv has the  fields [source, target, relation, source_label, target_label, kind, p_value, z_score]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Download graph as an image file: Save a PNG, JPG, or SVG image of the network view
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Save subnetwork: Save the subnetwork to a file. This produces two files:\ 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 -&nbsp; nodes.csv has the fields [id, label, kind, uri, color]\
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 -&nbsp; edges.csv has the  fields [source, target, relation, source_label, target_label, kind, p_value, z_score]\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Download graph as an image file: Save a PNG, JPG, or SVG image of the network view\
 <p>&nbsp;</p>
 
 
@@ -73,9 +73,9 @@ The subnetwork returned by this feature contains transcription factors with the 
 
 ### Enrichment analysis search parameters: <a name="enrichment-params"></a>
 There are three advanced search options that can be adjusted by toggling "Advanced Options". 
-1) Minimum libraries: This filters out nodes from the enrichment results if they occur in fewer than the specified number of ChEA3 libraries (maximum of 6)
-2) Maximum edge p-value: Specify the maximum p-value of an edge. 
-3) Specify number of nodes: Specify how many top ranked nodes. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - Minimum libraries: This filters out nodes from the enrichment results if they occur in fewer than the specified number of ChEA3 libraries (maximum of 6)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - Maximum edge p-value: Specify the maximum p-value of an edge.\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - Specify number of nodes: Specify how many top ranked nodes.\
 
 ### Perform a query:<a name="perform-query"></a>
 To perform a query, input a list of newline-separated Entrez gene symbols into the text box. Alternatively, click "try an example" to use an example gene set. Add a description under the "Description" field. Adjust the advanced options as necessary. Click submit. 
