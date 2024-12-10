@@ -13,18 +13,14 @@
 	2. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Search parameters](#enrichment-params)
 	3. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Perform a query](#perform-query)
 
-
+<br/><br/>
 ## **The ChEA-KG GRN** <a name="introduction"></a>
 ***Nodes***
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nodes in the ChEA-KG are human transcription factors cataloged by [ChEA3](https://maayanlab.cloud/chea3/). 
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Each node is associated with an **id, label**, and **URI** that points to the NCBI gene page for that gene.
-
-<p>&nbsp;</p>
+Nodes in the ChEA-KG are human transcription factors cataloged by [ChEA3](https://maayanlab.cloud/chea3/). Each node is associated with an **id, label**, and **URI** that points to the NCBI gene page for that gene.
 ***Edges***
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Edges in the GRN indicate regulatory relationships between source and target TFs, inferred from enrichment analysis.  
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; There are two edge types: 
-    1. <span style="color: red;">Red</span> plungers indicate downregulation
-    2. <span style="color: green;">Green</span> arrows inidcate upregulation
+Edges in the GRN indicate regulatory relationships between source and target TFs, inferred from enrichment analysis.  There are two edge types: 
+    1. <span style="color: red; font-weight: bold;">Red</span> plungers indicate downregulation
+    2. <span style="color: green; font-weight: bold;">Green</span> arrows inidcate upregulation
 <p>&nbsp;</p>
 
 ### **Searching the ChEA-KG GRN** <a name="grn-search"></a>
@@ -45,7 +41,6 @@ The toolbar above the network view provides several buttons to further interact 
 To move a node in the network view, click and drag. 
 
 #### *Adjust the network view:* <a name="adjust-view"></a>
-The toolbar above the network view provides the following buttons to further interact with the network, from left to right: 
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adjust subnetwork size: Adjust the size slider to limit the number of relationships displayed for that network
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Full-screen: Click the full-screen button to view the network search page in full-screen
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enable the tooltip: The tooltip displays the ID, label, and URI for each node when the mouse hovers over a node in the network. It also provides options to remove or expand a ndoe.  
@@ -54,14 +49,13 @@ The toolbar above the network view provides the following buttons to further int
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Switch graph layout: Switch between force-directed, geometric, or hierarchical graph layouts. 
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Show edge labels: Display the edge labels ("upregulates", "downregulates") over the edges
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Show legend: Show the legend. An additional toolbar button is displayed that adjusts the size of the legend when clicked. 
-<p>&nbsp;</p>
 
 #### *Download the subnetwork:*  <a name="download"></a>
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Save subnetwork: Save the subnetwork to a file. This produces two files: 
-    - nodes.csv has the fields [id, label, kind, uri, color]
-    - edges.csv has the  fields [source, target, relation, source_label, target_label, kind, p_value, z_score]
+    - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodes.csv has the fields [id, label, kind, uri, color]
+    - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edges.csv has the  fields [source, target, relation, source_label, target_label, kind, p_value, z_score]
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Download graph as an image file: Save a PNG, JPG, or SVG image of the network view
-
+<p>&nbsp;</p>
 ## **Enrichment analysis with ChEA-KG** <a name="chea-enrichment"></a>
 The enrichment analysis page provides an option to visualize a subnetwork of the GRN based on ChEA3 enrichment analysis results. 
 
@@ -70,10 +64,9 @@ The subnetwork returned by this feature contains transcription factors with the 
 
 ### Enrichment analysis search parameters: <a name="enrichment-params"></a>
 There are three advanced search options that can be adjusted by toggling "Advanced Options". 
-1. Minimum libraries: This filters out nodes from the enrichment results if they occur in fewer than the specified number of ChEA3 libraries (maximum of 6)
-2. Maximum edge p-value: Specify the maximum p-value of an edge. 
-3. Specify number of nodes: Specify how many top ranked nodes. 
-<p>&nbsp;</p>
+1) Minimum libraries: This filters out nodes from the enrichment results if they occur in fewer than the specified number of ChEA3 libraries (maximum of 6)
+2) Maximum edge p-value: Specify the maximum p-value of an edge. 
+3) Specify number of nodes: Specify how many top ranked nodes. 
 
 ### Perform a query:<a name="perform-query"></a>
 To perform a query, input a list of newline-separated Entrez gene symbols into the text box. Alternatively, click "try an example" to use an example gene set. Add a description under the "Description" field. Adjust the advanced options as necessary. Click submit. 
