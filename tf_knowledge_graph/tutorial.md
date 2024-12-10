@@ -24,8 +24,9 @@ Nodes in the ChEA-KG are human transcription factors cataloged by [ChEA3](https:
 ***Edges*** 
 
 Edges in the GRN indicate regulatory relationships between source and target TFs, inferred from enrichment analysis. There are two edge types: 
-    1. <span style="color: red;">Red</span> plungers indicate downregulation
-    2. <span style="color: green;">Green</span> arrows indicate upregulation
+    1 - <span style="color: red;">Red</span> plungers indicate downregulation
+    2 - <span style="color: green;">Green</span> arrows indicate upregulation
+
 <p>&nbsp;</p>
 
 ### **Searching the ChEA-KG GRN** <a name="grn-search"></a>
@@ -58,8 +59,8 @@ To move a node in the network view, click and drag.
 
 #### *Download the subnetwork:*  <a name="download"></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Save subnetwork: Save the subnetwork to a file. This produces two files: 
-    - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp; nodes.csv has the fields [id, label, kind, uri, color]
-    - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp; edges.csv has the  fields [source, target, relation, source_label, target_label, kind, p_value, z_score]
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 -&nbsp; nodes.csv has the fields [id, label, kind, uri, color]
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 -&nbsp; edges.csv has the  fields [source, target, relation, source_label, target_label, kind, p_value, z_score]
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Download graph as an image file: Save a PNG, JPG, or SVG image of the network view
 <p>&nbsp;</p>
 
