@@ -17,6 +17,8 @@
 
 ## **The ChEA-KG GRN** <a name="introduction"></a>
 
+![home](./tutorial/search-home.png)  
+
 ***Nodes*** 
 
 Nodes in the ChEA-KG are human transcription factors cataloged by [ChEA3](https://maayanlab.cloud/chea3/). Each node is associated with an **id, label**, and **URI** that points to the NCBI gene page for that gene.  
@@ -24,8 +26,10 @@ Nodes in the ChEA-KG are human transcription factors cataloged by [ChEA3](https:
 ***Edges*** 
 
 Edges in the GRN indicate regulatory relationships between source and target TFs, inferred from enrichment analysis. There are two edge types: 
-    1 - <span style="color: red;">Red</span> plungers indicate downregulation\
-    2 - <span style="color: green;">Green</span> arrows indicate upregulation\
+    1 - <span style="color: red;">Red</span> plungers indicate downregulation  
+    2 - <span style="color: green;">Green</span> arrows indicate upregulation  
+
+![nodes-and-edges](./tutorial/introduction.png)  
 
 <p>&nbsp;</p>
 
@@ -34,12 +38,15 @@ Click and drag on any node to move it.
 
 #### *One-term search* <a name="single-search"></a>
 Generate a subnetwork of itneractions between a single transcription factor and its neighboring nodes by inputting the gene symbol for a transcription factor into the search bar under "Start with". Type in the gene symbol. If it exists in the network, it will be shown in the autocomplete menu. Click on the matching name to view the results. 
+![single-term](./tutorial/single-term.png)  
 
 #### *Subgraph search* <a name="subgraph-search"></a>
 Generate a subnetwork with a given number of relationships by toggling the "End Node" switch. Leave the "End with" field **blank**. Control the size of the subnetwork using the slider above the network view. 
+![subgraph](./tutorial/subgraph.png)    
 
 #### *Two-term search* <a name="two-term-search"></a>
 The two-term search generates a shortest path between two transcription factor nodes. Enter a starting transcription factor in the "Start with" field. Toggle the "End Node" switch, then input a desired end node in the "End with" field. The result displays a shorest path between the two nodes. In the case where there is a tie for a shortest path length, all paths of that length are shown. 
+![two-term](./tutorial/two-term.png)  
 
 ### **Interacting with the network** <a name="interact-network"></a>
 The toolbar above the network view provides several buttons to further interact with the network. From left to right, these are Size, Full-screen, Network view, Table view, Save subnetwork, Download graph as an image file, Show tooltip, Switch graph layout, Show edge labels, and Show legend.  
@@ -47,35 +54,57 @@ The toolbar above the network view provides several buttons to further interact 
 To move a node in the network view, click and drag. 
  
 #### *Adjust the network view:* <a name="adjust-view"></a>
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adjust subnetwork size: Adjust the size slider to limit the number of relationships displayed for that network
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Full-screen: Click the full-screen button to view the network search page in full-screen
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enable the tooltip: The tooltip displays the ID, label, and URI for each node when the mouse hovers over a node in the network. It also provides options to remove or expand a ndoe.  
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Remove or expand a node: With the tooltip enabled, hover over the node of interest and click on the remove or expand buttons. 
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Network and table view: Toggle between network and table view by clicking on their respective buttons
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Switch graph layout: Switch between force-directed, geometric, or hierarchical graph layouts. 
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Show edge labels: Display the edge labels ("upregulates", "downregulates") over the edges
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Show legend: Show the legend. An additional toolbar button is displayed that adjusts the size of the legend when clicked.  
+**Adjust subnetwork size:**  
+Adjust the size slider to limit the number of relationships displayed for that network
+![size](./tutorial/network_size.png)  
+**Full-screen:**  
+Click the full-screen button to view the network search page in full-screen
+**Enable the tooltip:**  
+The tooltip displays the ID, label, and URI for each node when the mouse hovers over a node in the network. It also provides options to remove or expand a ndoe.  
+![tooltip](./tutorial/tooltip.png)  
+**Remove or expand a node:**  
+With the tooltip enabled, hover over the node of interest and click on the remove or expand buttons. 
+![expand](./tutorial/expand1.png) ![remove](./tutorial/delete1.png)  
+   
+After expand:  
+![expanded](./tutorial/expand2.png)
+  
+After remove:  
+![removed](./tutorial/delete2.png)   
+  
+**Network and table view:**  
+Toggle between network and table view by clicking on their respective buttons
+![table-view](./tutorial/table_view.png)  
+**Switch graph layout:**  
+Switch between force-directed, geometric, or hierarchical graph layouts. 
+![hierarchical](./tutorial/heirarchical-layout.png)  
+**Show edge labels:**  
+Display the edge labels ("upregulates", "downregulates") over the edges
+![edge-labels](./tutorial/edge-label.png)  
+**Show legend:**  
+Show the legend. An additional toolbar button is displayed that adjusts the size of the legend when clicked.  
+![legend](./tutorial/legend.png)  
  
 
 #### *Download the subnetwork:*  <a name="download"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Save subnetwork: Save the subnetwork to a file. This produces two files:\ 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 -&nbsp; nodes.csv has the fields [id, label, kind, uri, color]\
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 -&nbsp; edges.csv has the  fields [source, target, relation, source_label, target_label, kind, p_value, z_score]\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Download graph as an image file: Save a PNG, JPG, or SVG image of the network view\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Save subnetwork: Save the subnetwork to a file. This produces two files:   
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 -&nbsp; nodes.csv has the fields [id, label, kind, uri, color]  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 -&nbsp; edges.csv has the  fields [source, target, relation, source_label, target_label, kind, p_value, z_score]  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Download graph as an image file: Save a PNG, JPG, or SVG image of the network view  
 <p>&nbsp;</p>
 
 
 ## **Enrichment analysis with ChEA-KG** <a name="chea-enrichment"></a>
 The enrichment analysis page provides an option to visualize a subnetwork of the GRN based on ChEA3 enrichment analysis results. 
-
+![nodes-and-edges](./tutorial/enrichment_home.png) 
 ### Enrichment analysis subnetwork <a name="enrichment-subnetwork"></a>
 The subnetwork returned by this feature contains transcription factors with the highest integrated mean rank for that gene set. By default, the top 10 ranked TFs are returned. The ChEA3 integrated mean rank is calculated from the average rank across six libraries: Enrichr Queries, GTEx Coexpression, ARCHS4 Coexpression, ENCODE ChIP-seq, Literature ChIP-seq, and ReMap ChIP-seq. For more information on how the ChEA3 Integrated Mean Rank is calculated, visit the [ChEA3 website](https://maayanlab.cloud/chea3/). 
 
 ### Enrichment analysis search parameters: <a name="enrichment-params"></a>
 There are three advanced search options that can be adjusted by toggling "Advanced Options". 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - Minimum libraries: This filters out nodes from the enrichment results if they occur in fewer than the specified number of ChEA3 libraries (maximum of 6)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - Maximum edge p-value: Specify the maximum p-value of an edge.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - Specify number of nodes: Specify how many top ranked nodes.\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 - Minimum libraries: This filters out nodes from the enrichment results if they occur in fewer than the specified number of ChEA3 libraries (maximum of 6)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 - Maximum edge p-value: Specify the maximum p-value of an edge.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 - Specify number of nodes: Specify how many top ranked nodes.  
 
 ### Perform a query:<a name="perform-query"></a>
 To perform a query, input a list of newline-separated Entrez gene symbols into the text box. Alternatively, click "try an example" to use an example gene set. Add a description under the "Description" field. Adjust the advanced options as necessary. Click submit. 
