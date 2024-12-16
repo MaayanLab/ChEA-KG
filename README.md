@@ -1,4 +1,4 @@
-# Knowledge Graph Demo
+# ChEA-KG
 
 ## Running Neo4j on docker
 
