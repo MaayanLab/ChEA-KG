@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 from matplotlib import pyplot as plt
-import numpy as np
 
 # load data 
 def load_network_edges(edge_list_dir):
@@ -65,12 +64,13 @@ def plot_connectivity_distrib(edge_list_file, output, fig_size = (6,5)):
 
     # OUTDEGREE
     plt.figure(figsize=fig_size, dpi=300)
-    plt.hist(out_counts, bins = out_bins, edgecolor ='none', color='black', 
-             weights = np.ones_like(out_counts) / len(out_counts))
+    plt.hist(out_counts, bins = out_bins, edgecolor ='none', color='black', )
     plt.yscale('log')
     
-    plt.ylabel('Relative frequency', fontsize=14)
-    plt.xlabel('Out-degree', fontsize=14)
+    plt.ylabel('Transcription factors', fontsize=18)
+    plt.xlabel('Out-degree', fontsize=18)
+    plt.xticks(fontsize=16)
+    plt.yticks(fontsize=16)
 
     plt.tight_layout()
     plt.savefig(f"{output}/img/out_degree_unfiltered.png")
@@ -78,12 +78,13 @@ def plot_connectivity_distrib(edge_list_file, output, fig_size = (6,5)):
 
     # INDEGREE  
     plt.figure(figsize=fig_size, dpi=300)
-    plt.hist(in_counts, bins = out_bins, edgecolor ='none', color='black', 
-             weights = np.ones_like(in_counts) / len(in_counts))
+    plt.hist(in_counts, bins = out_bins, edgecolor ='none', color='black')
     plt.yscale('log')
     
-    plt.ylabel('Relative frequency', fontsize=14)
-    plt.xlabel('In-degree', fontsize=14)
+    plt.xticks(fontsize=16)
+    plt.yticks(fontsize=16)
+    plt.ylabel('Transcription factors', fontsize=18)
+    plt.xlabel('In-degree', fontsize=18)
 
     plt.tight_layout()
     plt.savefig(f"{img_out}/in_degree_unfiltered.png")
@@ -91,38 +92,33 @@ def plot_connectivity_distrib(edge_list_file, output, fig_size = (6,5)):
     
 
 
-def n_self_loops(all_edges):
+def n_self_loops(edge_lib):
 
     """
     find the number of self loops
     """
-
-    all_edges['self_loop'] = all_edges.apply(lambda row: 1 if row['source'] == row['target'] else 0, axis=1)
-    return all_edges['self_loop'].sum()
+    self_loops = edge_lib[edge_lib['source'] == edge_lib['target']]
+    return self_loops.shape[0]
 
 
 def two_node_loops(edge_lib, opposite_lib = None):
 
     """
-    return the number of feedback loops
-    edge_type: specifies positive edges or negative edges
+    return the number of feedback loops. if opposite_lib is given, finds loops with one edge from each library (eg up and down)
+    edge_lib: library of edges
     """
 
     if opposite_lib is not None:
         reversed = opposite_lib.rename(columns={'source':'target','target':'source'})
-        merged = edge_lib.merge(reversed, on=['source', 'target'])
-        final = merged[merged['source'] != merged['target']]
-        merged['pair'] = merged.apply(lambda row: tuple(sorted((row['source'], row['target']))), axis=1)
-
     else: 
         reversed = edge_lib.rename(columns={'source': 'target', 'target': 'source'})
-        merged = edge_lib.merge(reversed, on=['source', 'relation', 'target'])
-        merged = merged[merged['source'] != merged['target']]
-        merged['pair'] = merged.apply(lambda row: tuple(sorted((row['source'], row['target']))), axis=1)
-        final = merged['pair'].drop_duplicates()
+        
+    merged = edge_lib.merge(reversed, on=['source', 'target'])
+    merged = merged[merged['source'] != merged['target']]
+    merged['pair'] = merged.apply(lambda row: tuple(sorted((row['source'], row['target']))), axis=1)
+    final = merged['pair'].drop_duplicates()
 
     return final.shape[0]
-
 
 
 def all_network_stats(edge_list_file, save = False, output = None):
