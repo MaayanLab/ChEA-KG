@@ -7,9 +7,7 @@ py2neo
 python-dotenv
 rdflib
 seaborn
-git+https://github.com/Maayanlab/maayanlab-bioinformatics.git
 neo4j
 matplotlib
-git+https://github.com/Maayanlab/maayanlab-bioinformatics.git@8456f20b7e3ffdbc2f3c018d13d67de7e54d2e38
 scipy
 networkx
