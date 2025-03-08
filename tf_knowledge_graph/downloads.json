@@ -1,31 +1,24 @@
 {
     "network":[
         {
-            "name":"Edge weighted",
-            "nodes": 1546,
-            "edges": 53003,
-            "zip": "https://minio.dev.maayanlab.cloud/hgrn-chear/edge_weighted_assertions.zip",
-            "size":"854.6 KiB"
-        },
-        {
-            "name":"Node weighted",
-            "nodes": 1554,
-            "edges": 130793,
-            "zip": "https://minio.dev.maayanlab.cloud/hgrn-chear/node_weighted_assertions.zip",
+            "name":"Node-draw filtered GRN",
+            "nodes": 1559,
+            "edges": 131181,
+            "zip": "https://minio.dev.maayanlab.cloud/hgrn-chear/node_draw_GRN.zip",
             "size": "2.3 MiB"
         },
         {
-            "name":"Signature shuffling",
-            "nodes": 1555,
-            "edges": 108715,
-            "zip": "https://minio.dev.maayanlab.cloud/hgrn-chear/signature_shuffling_assertions.zip",
+            "name":"Target-set-swap filtered GRN",
+            "nodes": 1560,
+            "edges": 109813,
+            "zip": "https://minio.dev.maayanlab.cloud/hgrn-chear/target_set_swap_GRN.zip",
             "size": "2.3 MiB"
         },
         {
-            "name":"Unfiltered network",
+            "name":"Unfiltered GRN",
             "nodes": 1556,
-            "edges": 372382,
-            "zip": "https://minio.dev.maayanlab.cloud/hgrn-chear/unfiltered_assertions.zip",
+            "edges": 373250,
+            "zip": "https://minio.dev.maayanlab.cloud/hgrn-chear/unfiltered_GRN.zip",
             "size": "2.3 MiB"
         }
     ],
