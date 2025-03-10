@@ -67,13 +67,14 @@ def plot_connectivity_distrib(edge_list_file, output, fig_size = (6,5)):
     plt.hist(out_counts, bins = out_bins, edgecolor ='none', color='black', )
     plt.yscale('log')
     
-    plt.ylabel('Transcription factors', fontsize=18)
-    plt.xlabel('Out-degree', fontsize=18)
-    plt.xticks(fontsize=16)
-    plt.yticks(fontsize=16)
+    plt.ylabel('Transcription factors', fontsize=24)
+    plt.xlabel('Out-degree', fontsize=24)
+    
+    plt.xticks(fontsize=20,rotation=30)
+    plt.yticks(fontsize=20)
 
     plt.tight_layout()
-    plt.savefig(f"{output}/img/out_degree_unfiltered.png")
+    plt.savefig(f"{output}/img/out_degree_unfiltered.svg", format='svg')
     plt.show()
 
     # INDEGREE  
@@ -81,13 +82,13 @@ def plot_connectivity_distrib(edge_list_file, output, fig_size = (6,5)):
     plt.hist(in_counts, bins = out_bins, edgecolor ='none', color='black')
     plt.yscale('log')
     
-    plt.xticks(fontsize=16)
-    plt.yticks(fontsize=16)
-    plt.ylabel('Transcription factors', fontsize=18)
-    plt.xlabel('In-degree', fontsize=18)
+    plt.xticks(fontsize=20,rotation=30)
+    plt.yticks(fontsize=20)
+    plt.ylabel('Transcription factors', fontsize=24)
+    plt.xlabel('In-degree', fontsize=24)
 
     plt.tight_layout()
-    plt.savefig(f"{img_out}/in_degree_unfiltered.png")
+    plt.savefig(f"{img_out}/in_degree_unfiltered.svg", format='svg')
     plt.show()
     
 
@@ -140,8 +141,8 @@ def all_network_stats(edge_list_file, save = False, output = None):
         'Total edges':all_edges.shape[0],
         'Number of up edges':network['dn edges'].shape[0],
         'Number of dn edges':network['up edges'].shape[0],
-        'Avg out links per node':avg_node_degree(all_edges, 'target'),
-        'Avg in links per node':avg_node_degree(all_edges, 'source'),
+        'Avg in links per node':avg_node_degree(all_edges, 'target'),
+        'Avg out links per node':avg_node_degree(all_edges, 'source'),
         'Avg total links per node':all_edges.shape[0] / network['all nodes'].shape[0],
         'Number of self loops':n_self_loops(all_edges),
         'Number of positive feedback loops':two_node_loops(network['up edges']) + two_node_loops(network['dn edges']),

@@ -3,8 +3,10 @@
 Mammalia
 gmt
 .env
+.env.development
 data/
 .ipynb_checkpoints
+import_csv_old.py
 csv/
 *.dump
 
@@ -12,6 +14,7 @@ raw_data/
 summary_figures/
 kg_assertions_for_neo4j/
 benchmarking_results/
+fig_notebooks/
 Gene-Knowledge-Graph/
 edge_constructing_files/
 filtered_edge_list/
@@ -20,16 +23,9 @@ benchmarking_figures.ipynb
 public/schema.json
 
 # test folders
-kg_assertions_for_neo4j_large/
-filtered_edge_list_large_network/
-benchmarking_results_large_networks/
 figures/
 cytoscape_ITCR_poster/
 Dockerfile_dontuse
-kg_assertions_for_neo4j_all_networks/
-about.md
-data_deployment/
-CPTAC/
 tutorial/
 misc_notebooks/
 
