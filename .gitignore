@@ -32,3 +32,5 @@ misc_notebooks/
 data/
 out/
 reviewed/
+
+minio-data/
