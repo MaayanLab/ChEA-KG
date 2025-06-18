@@ -4,6 +4,7 @@ Mammalia
 gmt
 .env
 .env.development
+package-lock.json
 data/
 .ipynb_checkpoints
 import_csv_old.py
@@ -11,24 +12,18 @@ csv/
 *.dump
 
 raw_data/
-summary_figures/
 kg_assertions_for_neo4j/
 benchmarking_results/
-fig_notebooks/
-Gene-Knowledge-Graph/
+fig_data/
+outdated/
 edge_constructing_files/
 filtered_edge_list/
-package-lock.json
 benchmarking_figures.ipynb
 public/schema.json
 
-# test folders
-figures/
-cytoscape_ITCR_poster/
-Dockerfile_dontuse
-tutorial/
-misc_notebooks/
 
+figures/
+Dockerfile_dontuse
 data/
 out/
 reviewed/
