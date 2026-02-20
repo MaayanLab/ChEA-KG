@@ -29,3 +29,5 @@ out/
 reviewed/
 
 minio-data/
+moa_atlas_figs/
+aging_atlas_out/
