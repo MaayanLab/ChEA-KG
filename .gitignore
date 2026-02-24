@@ -14,20 +14,14 @@ csv/
 raw_data/
 kg_assertions_for_neo4j/
 benchmarking_results/
-fig_data/
-outdated/
 edge_constructing_files/
 filtered_edge_list/
 benchmarking_figures.ipynb
 public/schema.json
-
+fig_notebooks/
 
 figures/
-Dockerfile_dontuse
 data/
 out/
-reviewed/
 
 minio-data/
-moa_atlas_figs/
-aging_atlas_out/
